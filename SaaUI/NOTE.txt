@@ -1,0 +1,52 @@
+﻿Error{
+ - In SaaToast FormList.. Forms are not getting removed.. Reason Unknown..possible solution: using IDs
+  - when i delete saachatpanel chats with no id li{
+       it seems some ids are not removed from the chatBuubleIDlist. im not sure
+  }
+  - SaaAccordion: height decreases when ever is docked. 
+user reported  -saatooltip > returned null... when used  on some third party frameworks like bunifu 'items'
+}
+
+
+
+TODO{
+  - In SaaToast, user can incremenet and decrement the loader.. or as progress.
+  - Add SaaToast animations when in and Out
+  - Get visible toasts
+  - Add SaaToast make stacks vertical/horizontal
+  -
+ }
+ Future Feature{
+ - Add animation to saabutton like click effect
+ }
+ Future Controls{
+  - SaaToolTip - from scratch - use extender provider(added)
+  - SaaNumericUpDown
+  - SaaPricing
+  - SaaProgressBar(added)
+  - SaaCharts/doughnut/bubblechart/piechart
+  - SaaGraphBar
+  - SaaHandWritingBoard
+  - SaaBattery
+  - SaaHtmlEditor
+  - SaaAccordion - Concept from Bootstrap(added)
+  - SaaIcons and support to all Controls that have Image or as extension to images - dynamicalled get images of a control
+  - SaaRadio
+  - SaaDropDown
+  - SaaCollapse - Concept from Bootstrap Collapse
+  - SaaCarousel - concept from bootstrap Carousel.
+  - SaaColors
+  - BreadCrumb - concept from materializeCss
+  - SaaFloatingActionButton - concept from materializeCss
+  - SaaPagination - concept from materializeCss
+   - SaaShapes 
+   - SaaIntroTips - introduction tips (added)
+   - SaaTree - a flowchart
+   - SaaSlider
+   - Overlay
+   - File uploader 
+   - Calender (interactive animations)
+   - panel with media query(animative)
+   - SaaDragDrop
+   )
+ }

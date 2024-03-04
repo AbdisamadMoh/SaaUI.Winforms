@@ -1,0 +1,24 @@
+
+v1.1{
+ Fix{
+  - fixed saacrollbar causes bound control to flickers showing its default scrollbars
+  - fixed saacrollbar not working when bound control is docked
+ }
+
+ New{
+  
+  SaaScrollBar{
+   - Mousewheel scrolling added (control: vertical only, scrollbar both) - scrolls even when invisible
+   - Option to disable mousewheel
+   - Now disables windows scrollbars by default
+  }
+ }
+
+
+
+//end 1.1
+}
+
+v1.2
+ Fix
+  - Fixed saascrollbar throws error when TargetControl is not set.

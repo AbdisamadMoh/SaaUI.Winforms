@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\build\Microsoft.CodeAnalysis.NetAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\build\Microsoft.CodeAnalysis.NetAnalyzers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <LangVersion>8.0</LangVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{440A9BF3-A9D5-47DE-A51A-B4554CB1AA77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaaUI</RootNamespace>
+    <AssemblyName>SaaUI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SaaUI.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Editors\ControlDesigner\Behaviors.cs" />
+    <Compile Include="Editors\ControlDesigner\Glyphs.cs" />
+    <Compile Include="Editors\InContainerDesigner\PanelDesigner.cs" />
+    <Compile Include="Editors\InContainerDesigner\ParentControlDesigner.cs" />
+    <Compile Include="Editors\SaaControlPreview.cs" />
+    <Compile Include="Editors\SaaIntroTipDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\SaaIntroTipDesigner.Designer.cs">
+      <DependentUpon>SaaIntroTipDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Smart Tags\SaaIntroTipTag.cs" />
+    <Compile Include="Editors\Smart Tags\SaaToastTag.cs" />
+    <Compile Include="Engines\CSS\Attributes\ISharedAttributes.cs" />
+    <Compile Include="Engines\CSS\Css Parser.cs" />
+    <Compile Include="Helpers\Class\Abstracts\SaaNotifier.cs" />
+    <Compile Include="Helpers\Class\Attributes\SaaPropertyNotifier.cs" />
+    <Compile Include="Helpers\Class\ControlCast.cs" />
+    <Compile Include="Helpers\Class\ControlFactory.cs" />
+    <Compile Include="Helpers\Class\ControlShadow.cs" />
+    <Compile Include="Helpers\Class\Extensions\Extensions.cs" />
+    <Compile Include="Helpers\Class\Extensions\SmoothRoundEdge.cs" />
+    <Compile Include="Helpers\Class\Extensions\Transparenter.cs" />
+    <Compile Include="Helpers\Class\LivePreviewer.cs" />
+    <Compile Include="Helpers\Class\Localization\Localization.cs" />
+    <Compile Include="Helpers\Class\Properties\SaaForms.cs" />
+    <Compile Include="Helpers\Class\Properties\Sizes.cs" />
+    <Compile Include="Helpers\Class\Properties\SkewedBase.cs" />
+    <Compile Include="Helpers\Class\Properties\ToggleStyles.cs" />
+    <Compile Include="Helpers\Class\Properties\Radius.cs" />
+    <Compile Include="Helpers\Class\Properties\ShadowColorPositions.cs" />
+    <Compile Include="Helpers\Class\PropertyConverters\SaaToggleStylesObjectConverter .cs" />
+    <Compile Include="Helpers\Class\PropertyConverters\SaaRadiusObjectConverter.cs" />
+    <Compile Include="Helpers\Class\PropertyConverters\SaaShadowColorConverter.cs" />
+    <Compile Include="Helpers\Class\SaaSetStyle.cs" />
+    <Compile Include="Helpers\Drawers\DrawPaint.cs" />
+    <Compile Include="Helpers\Forms\OptimizedPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Helpers\Forms\SaaNonFocusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\Forms\SaaNonFocusForm.Designer.cs">
+      <DependentUpon>SaaNonFocusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\interfaces\ISaaNotification.cs" />
+    <Compile Include="Helpers\interfaces\ISaaUI.cs" />
+    <Compile Include="Helpers\Drawers\BorderPath.cs" />
+    <Compile Include="Editors\Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Preview.Designer.cs">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal Colors\SaaInternalColors.cs" />
+    <Compile Include="Helpers\Enums\Enums.cs" />
+    <Compile Include="Helpers\Class\SaaHexColor.cs" />
+    <Compile Include="Helpers\Drawers\RoundedRectangleF.cs" />
+    <Compile Include="Helpers\Class\Transparenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Editors\ColorBlenderDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\ColorBlenderDesigner.Designer.cs">
+      <DependentUpon>ColorBlenderDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\SaaToastDesignerEditor.cs" />
+    <Compile Include="Editors\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\SaaToastDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\SaaToastDesigner.Designer.cs">
+      <DependentUpon>SaaToastDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaaControlCollection.cs" />
+    <Compile Include="UI\SaaAccordion\SaaAccordion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaAccordion\SaaAccordion.Designer.cs">
+      <DependentUpon>SaaAccordion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaAccordion\SaaAccordionHead.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaAccordion\SaaAccordionPanelDesigner.cs" />
+    <Compile Include="UI\SaaAccordion\SaaAccordionParentControlDesigner.cs" />
+    <Compile Include="UI\SaaFlatTextBox\SaaFlatTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\Class\DrawHelper.cs" />
+    <Compile Include="Helpers\Class\MouseStatus.cs" />
+    <Compile Include="Helpers\Class\ThemeColor.cs" />
+    <Compile Include="UI\SaaButton\SaaButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Shaping.cs" />
+    <Compile Include="UI\SaaCard\SaaCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaCard\SaaCard.Designer.cs">
+      <DependentUpon>SaaCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaChatBubble\SaaChatBubble.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaChatBubble\SaaChatBubble.Designer.cs">
+      <DependentUpon>SaaChatBubble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaCheckBox\SaaCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaCircularProgress\SaaCircularProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaCircularProgress\SaaCircularProgress.Designer.cs">
+      <DependentUpon>SaaCircularProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaCustomTextBox\SaaCustomTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaCustomTextBox\SaaCustomTextBox.Designer.cs">
+      <DependentUpon>SaaCustomTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaFlowLayoutPanel\SaaFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaFontIcons\SaaIcons.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaForms\SaaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SaaForms\SaaForm.Designer.cs">
+      <DependentUpon>SaaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaForms\SaaFormControlBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaForms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SaaForms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaGrowingSpinner\SaaGlowing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaImageButton\SaaImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaIntroTip\SaaIntroTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaIntroTip\SaaIntroTip.Designer.cs">
+      <DependentUpon>SaaIntroTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaIntroTip\SaaIntroTipControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaIntroTip\SaaIntroTipControl.Designer.cs">
+      <DependentUpon>SaaIntroTipControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaLabel\SaaLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaLine\SaaLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaPanel\SaaPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaPictureBox\SaaPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaPreloader\SaaPreloader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaPreloader\SaaPreloader.Designer.cs">
+      <DependentUpon>SaaPreloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Forms\DropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\Forms\DropDownForm.Designer.cs">
+      <DependentUpon>DropDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaProgressBar\SaaProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaProgressBar\SaaProgressBar.Designer.cs">
+      <DependentUpon>SaaProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaRadioButton\SaaRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaRichTextBox\SaaRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaForms\SaaRoundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SaaScrollBar\SaaScrollBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaScrollBar\SaaScrollBar.Designer.cs">
+      <DependentUpon>SaaScrollBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaShadow\SaaShadow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaTextBox\SaaTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\Class\DropShadow.cs" />
+    <Compile Include="UI\SaaTextBox\SaaTextBoxBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaToast\SaaToast.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaToast\SaaToastForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SaaToast\SaaToastForm.Designer.cs">
+      <DependentUpon>SaaToastForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaToggle\SaaToggle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaToolTip\SaaToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaChatBubble\SaaChatPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SaaChatBubble\SaaChatPanel.Designer.cs">
+      <DependentUpon>SaaChatPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaaToolTip\SaaToolTip1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\SaaToolTip\ToolTipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SaaToolTip\ToolTipForm.Designer.cs">
+      <DependentUpon>ToolTipForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Editors\SaaIntroTipDesigner.resx">
+      <DependentUpon>SaaIntroTipDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\Forms\SaaNonFocusForm.resx">
+      <DependentUpon>SaaNonFocusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaAccordion\SaaAccordion.resx">
+      <DependentUpon>SaaAccordion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaAccordion\SaaAccordionHead.resx">
+      <DependentUpon>SaaAccordionHead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaChatBubble\SaaChatPanel.resx">
+      <DependentUpon>SaaChatPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\Forms\DropDownForm.resx">
+      <DependentUpon>DropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaProgressBar\SaaProgressBar.resx">
+      <DependentUpon>SaaProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaToolTip\ToolTipForm.resx">
+      <DependentUpon>ToolTipForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Resources\ScrollBarArrowDown.png" />
+    <None Include="Resources\GripNormal.png" />
+    <EmbeddedResource Include="Editors\Preview.resx">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Editors\ColorBlenderDesigner.resx">
+      <DependentUpon>ColorBlenderDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\SaaToastDesigner.resx">
+      <DependentUpon>SaaToastDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaCard\SaaCard.resx">
+      <DependentUpon>SaaCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaChatBubble\SaaChatBubble.resx">
+      <DependentUpon>SaaChatBubble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaCircularProgress\SaaCircularProgress.resx">
+      <DependentUpon>SaaCircularProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaCustomTextBox\SaaCustomTextBox.resx">
+      <DependentUpon>SaaCustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaForms\SaaForm.resx">
+      <DependentUpon>SaaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaForms\SaaFormControlBox.resx">
+      <DependentUpon>SaaFormControlBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaForms\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaIntroTip\SaaIntroTipControl.resx">
+      <DependentUpon>SaaIntroTipControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaPreloader\SaaPreloader.resx">
+      <DependentUpon>SaaPreloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaScrollBar\SaaScrollBar.resx">
+      <DependentUpon>SaaScrollBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaaToast\SaaToastForm.resx">
+      <DependentUpon>SaaToastForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Roboto-Medium.ttf" />
+    <None Include="Resources\Roboto-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Checked_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SaaButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="unvell.ReoGrid">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Versions.txt" />
+    <None Include="Resources\icons8_Lock_32.png" />
+    <None Include="Resources\Entypo_e78d%280%29_32.png" />
+    <None Include="Resources\Entypo_e78b%280%29_32.png" />
+    <None Include="Resources\icons8-macos-minimize-90-inActive.png" />
+    <None Include="Resources\icons8-macos-minimize-90-Active.png" />
+    <None Include="Resources\icons8-macos-maximize-90-inActive.png" />
+    <None Include="Resources\icons8-macos-maximize-90-Active.png" />
+    <None Include="Resources\icons8-macos-close-90-inActive.png" />
+    <None Include="Resources\icons8-macos-close-90-Active.png" />
+    <None Include="Resources\mini1.ico" />
+    <None Include="Resources\mini.ico" />
+    <None Include="Resources\X_16.png" />
+    <None Include="Resources\Rectangle_16.png" />
+    <None Include="Resources\Minimize_16.png" />
+    <None Include="Resources\Rectangle_32.png" />
+    <None Include="Resources\Minimize_32.png" />
+    <None Include="Resources\Min_32.png" />
+    <None Include="Resources\X_32.png" />
+    <None Include="Resources\SaaToast.bmp" />
+    <EmbeddedResource Include="icons\SaaButton_16.bmp" />
+    <EmbeddedResource Include="icons\SaaCard_16.bmp" />
+    <EmbeddedResource Include="icons\SaaChatBubble_16.bmp" />
+    <EmbeddedResource Include="icons\SaaCircularProgress_16.bmp" />
+    <EmbeddedResource Include="icons\SaaCustomTextBox_16.bmp" />
+    <EmbeddedResource Include="icons\SaaFlowLayoutPanel_16.bmp" />
+    <EmbeddedResource Include="icons\SaaHtmlBox_16.bmp" />
+    <EmbeddedResource Include="icons\SaaHtmlToolTip_16.bmp" />
+    <EmbeddedResource Include="icons\SaaLabel_16.bmp" />
+    <EmbeddedResource Include="icons\SaaLine_16.bmp" />
+    <EmbeddedResource Include="icons\SaaPanel_16.bmp" />
+    <EmbeddedResource Include="icons\SaaPictureBox_16.bmp" />
+    <EmbeddedResource Include="icons\SaaPreloader_16.bmp" />
+    <EmbeddedResource Include="icons\SaaProgressBar_16.bmp" />
+    <EmbeddedResource Include="icons\SaaRichTextBox_16.bmp" />
+    <EmbeddedResource Include="icons\SaaTextBox_16.bmp" />
+    <EmbeddedResource Include="icons\SaaToast_16.bmp" />
+    <EmbeddedResource Include="icons\SaaImageButton_16.bmp" />
+    <EmbeddedResource Include="icons\SaaAccordion.bmp" />
+    <EmbeddedResource Include="icons\SaaChatPanel.bmp" />
+    <EmbeddedResource Include="icons\SaaCheckBox.bmp" />
+    <EmbeddedResource Include="icons\SaaControlBox.bmp" />
+    <EmbeddedResource Include="icons\SaaGlowing.bmp" />
+    <EmbeddedResource Include="icons\SaaIntroTip.bmp" />
+    <EmbeddedResource Include="icons\SaaShadow.bmp" />
+    <EmbeddedResource Include="icons\SaaToast.bmp" />
+    <EmbeddedResource Include="icons\SaaToggle.bmp" />
+    <EmbeddedResource Include="icons\SaaScrollBar.bmp" />
+    <EmbeddedResource Include="icons\SaaToolTip.bmp" />
+    <EmbeddedResource Include="icons\SaaProgressBar.bmp" />
+    <Content Include="NOTE.txt" />
+    <Content Include="Recycle.txt" />
+    <None Include="Resources\icons8_Multiply_32.png" />
+    <None Include="Resources\icons8_InActiveClose_32.png" />
+    <None Include="Resources\icons8_Ok_32.png" />
+    <None Include="Resources\InActiveArrowUp_32.png" />
+    <None Include="Resources\InActiveArrowDown_32.png" />
+    <None Include="Resources\ArrowDown_32.png" />
+    <None Include="Resources\ActiveArrowUp_32.png" />
+    <None Include="Resources\titlebarunfocused1.png" />
+    <None Include="Resources\titlebarunfocused.png" />
+    <None Include="Resources\titlebar.png" />
+    <None Include="Resources\controlbutton_normal.png" />
+    <None Include="Resources\controlbutton_min.png" />
+    <None Include="Resources\controlbutton_maxres.png" />
+    <None Include="Resources\controlbutton_close.png" />
+    <None Include="Resources\icons8_UserInActive_32.png" />
+    <None Include="Resources\icons8_User_32.png" />
+    <None Include="Resources\icons8_Collapse_Arrow_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\SaaChatControl\" />
+    <Folder Include="UI\SaaContextMenu\" />
+    <Folder Include="UI\Tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.NetAnalyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\build\Microsoft.CodeAnalysis.NetAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\build\Microsoft.CodeAnalysis.NetAnalyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\build\Microsoft.CodeAnalysis.NetAnalyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\build\Microsoft.CodeAnalysis.NetAnalyzers.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\build\Microsoft.CodeAnalysis.NetAnalyzers.targets" Condition="Exists('..\packages\Microsoft.CodeAnalysis.NetAnalyzers.6.0.0\build\Microsoft.CodeAnalysis.NetAnalyzers.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

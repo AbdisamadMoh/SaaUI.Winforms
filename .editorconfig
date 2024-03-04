@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CA1717: Only FlagsAttribute enums should have plural names
+dotnet_diagnostic.CA1717.severity = none
